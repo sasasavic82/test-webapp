@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Sash test</title>
+        <script src="jquery.min.js"></script>
+        <script>
+
+        $.ajax({
+                url: "http://13.55.49.47:10106/msa/customer",
+                type: "GET",
+                success: function(res) { 
+                    $.each(res, function(i, data) {
+                        $('.bleh').append("<li>[" + data.id + "]: " + data.name + " " + data.surname + " lives in " + data.town + "<li>");
+                    })
+                 }
+            });
+        </script>
+    </head>
+    <body>
+        <ul class="bleh">
+        </ul>
+    </body>
+</html>
